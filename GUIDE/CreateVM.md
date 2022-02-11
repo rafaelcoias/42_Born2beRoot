@@ -29,6 +29,11 @@ Here is a guide of how you can create your VM
 
 ![image](https://user-images.githubusercontent.com/91686183/153648075-cc20e418-dd98-4d14-9d23-04a472a3c8dd.png)
 
+![image](https://user-images.githubusercontent.com/91686183/153656379-58ac08a6-f281-4367-b587-4d7d1917710d.png)
+> ⬆ Go to Settings -> Network -> Adapt 1 -> Advanced -> Port Forwarding and add a rule. Then write 4242 in Host Port and Guest Port ⬇
+
+![image](https://user-images.githubusercontent.com/91686183/153656530-99fa51f8-d28e-483d-9878-613cb430f5f8.png)
+
 ![image](https://user-images.githubusercontent.com/91686183/153648119-11696ed5-1dfd-492d-9b56-a012931134a5.png)
 > ⬆ Click “Start” green arrow to start the VM
 
