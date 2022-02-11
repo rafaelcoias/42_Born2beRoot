@@ -97,7 +97,9 @@ $<b>sudo vim login.defs</b> : <br>
 
 $<b>cd ./pam.d</b> : <br>
 $<b>sudo vim common-password</b> : <br>
-  - Find the line that has 'password    requisite         pam_pwquality.so retry=3' and add after 'retry=3' the following rules.
+<details><summary>
+  Find the line that has 'password    requisite         pam_pwquality.so retry=3' and add after 'retry=3' the following rules : </summary>
+  
   - ucredit=-1 : at least 1 UPPER case letter;
   - lcredit=-1 : at least 1 lower case letter;
   - dcredit=-1 : at least 1 digit;
@@ -107,12 +109,28 @@ $<b>sudo vim common-password</b> : <br>
   - difok=7 : it doesn't allow you to have more than 7 straight chars equals to your last password;
   - enforce_for_root : aply this settings for root.
   - At the end it should look like this
-
+</details>
+  
 ![image](https://user-images.githubusercontent.com/91686183/153658379-a29f47ae-aef0-4d39-9368-dba86826a2a8.png)
 
 $<b>sudo reboot</b> : <br>
 
 <h4>Sudo Configuration</h4>
+
+$<b>cd /etc/sudoers.d</b> : <br>
+$<b>sudo visudo</b> : <br>
+<details><summary>
+  Find the Defaults section and add the following Defaults : </summary>
+  
+  - Defaults  requiretty : Enable TTY;
+  - Defaults  logfile="/var/log/sudo/sudo.log" : Selects a folder for saving your log files;
+  - Defaults  log_input, log_output : Archives your log inputs and outputs;
+  - Defaults  passwd_tries=3 : set your password retries number;
+  - Defaults  baspass_message="*Try Again.*" : set your display message when a written password is incorrect;
+  
+</details>
+
+![image](https://user-images.githubusercontent.com/91686183/153660311-6dd81d1f-750e-4dec-9540-809d4d446dfb.png)
 
 <h4>Script</h4>
 
