@@ -30,6 +30,8 @@ After creating your Virtual Machine with Debian, run it and click in <i>Install<
 
 ![image](https://user-images.githubusercontent.com/91686183/153640306-edc42c9d-6c78-4333-89c2-b8faa8bb9aae.png)
 
+If you want to continue the installation click <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/Installation.md">here</a>.
+
 ![image](https://user-images.githubusercontent.com/91686183/153640344-5a40af90-ae9b-4d61-8e85-327ccd10edd9.png)
 
 ![image](https://user-images.githubusercontent.com/91686183/153640359-31d4e7f0-bbc3-4682-ab21-56ed479e41d2.png)
