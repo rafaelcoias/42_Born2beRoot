@@ -67,6 +67,7 @@ After creating your Virtual Machine with Debian, run it and click in <i>Install<
 
 ![image](https://user-images.githubusercontent.com/91686183/153643693-805c4173-179e-46bd-9c9f-8b57757d90b9.png)
 
+<hr>
 Now your VM is installed and ready for use.
 
 <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md">Conitnue Born2beRoot Guide.</a>
