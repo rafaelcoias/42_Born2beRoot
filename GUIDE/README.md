@@ -45,13 +45,72 @@ If you want to continue the installation click <a href="https://github.com/rafae
 
 This Guide shows every single command and its use.
 After you start the VM, write your encryption password and login with your new user, it is time to set up the basics.
+
+NOTE: <br>
+Everything in <b>bolt</b> is a command. <br>
+Everything in <i>italic</i> means it does not belong to the command, it's most likely a name or a user-name. <br>
+Everything after ':' is the explanation of the written command. <br>
+If you use this guide from the beginning to end, you have born2beroot done.
 <hr>
 
 <h4>Basic Set Up</h4>
 
+$<b>su</b> : <br>
+$<b>apt update</b> : <br>
+$<b>apt upgrade</b> : <br>
+$<b>apt install sudo</b> : <br>
+$<b>sudo apt install vim</b> : <br>
+$<b>sudo usermod -aG <i>sudo</i> <i>rade-sar</i></b> : <br>
+$<b>getent group <i>sudo</i></b> : <br>
+$<b>su - <i>rade-sar</i></b> : <br>
+$<b>sudo groupadd <i>user42</i></b> : <br>
+$<b>sudo usermod -aG <i>user42</i> <i>rade-sar</i></b> : <br>
+
 <h4>UFW and SSH Configuration</h4>
 
+$<b>sudo apt install openssh-server</b> : <br>
+$<b>sudo systemctl status ssh</b> : <br>
+$<b>ip a</b> : <br>
+$<b>cd /etc/ssh</b> : <br>
+$<b>sudo vim sshd_config</b> : <br>
+  - Here edit the line where '#Port 22' is and instead of '#Port 22' write 'Port 4242' (without '#'). <br>
+
+$<b>cd</b> : <br>
+$<b>sudo apt install ufw</b> : <br>
+$<b>sudo ufw enable</b> : <br>
+$<b>sudo ufw status</b> : <br>
+  - In VirtualBox app, go to Settings -> Network -> Adapt 1 -> Advanced -> Port Forwarding and check if you have a rule 1 for Port 4242. If not, create a new Rule and write 4242 in Host Port and in Guest Port. 
+
+$<b>sudo reboot</b> : <br>
+$<b>sudo ufw allow 4242/tcp</b> : <br>
+  - Now you can use your VM in your terminal. Write the following command in your terminal if you want to connect your VM with the terminal through ssh.
+
+$<b>ssh <i>rade-sar</i>@127.0.0.1 -p 4242</b> <br>
+
 <h4>Password Policy Configuration</h4>
+
+$<b>sudo apt install libpam-pwquality</b> : <br>
+$<b>cd /etc/</b> : <br>
+$<b>sudo vim login.defs</b> : <br>
+  - Find the line that has 'PASS_MAX_DAYS 99999' and edit it to 'PASS_MAX_DAYS 30'.
+  - Then edit 'PASS_MIN_DAYS 0' to 'PASS_MIN_DAYS 2'.
+
+$<b>cd ./pam.d</b> : <br>
+$<b>sudo vim common-password</b> : <br>
+  - Find the line that has 'password    requisite         pam_pwquality.so retry=3' and add after 'retry=3' the following rules.
+  - ucredit=-1 : at least 1 UPPER case letter;
+  - lcredit=-1 : at least 1 lower case letter;
+  - dcredit=-1 : at least 1 digit;
+  - maxrepeat=3 : it only lets you repeat a letter/number 3 times;
+  - minlen=10 : minimum 10 chars password;
+  - usercheck=0 : checks if your username is in your password;
+  - difok=7 : it doesn't allow you to have more than 7 straight chars equals to your last password;
+  - enforce_for_root : aply this settings for root.
+  - At the end it should look like this
+
+![image](https://user-images.githubusercontent.com/91686183/153658379-a29f47ae-aef0-4d39-9368-dba86826a2a8.png)
+
+$<b>sudo reboot</b> : <br>
 
 <h4>Sudo Configuration</h4>
 
