@@ -16,7 +16,7 @@
 
 <h3>Introduction</h3>
 
-There are a lot of new commands that you are going to use. I recommend you to take notes about what a command does. <br>
+There are a lot of new commands that you are going to use. I recommend you to take notes and study. <br>
 If you use this guide from the beginning to end, you have born2beroot done.
 
 <h3>Create VM</h3>
@@ -64,4 +64,8 @@ After you start the VM, write your encryption password and login with your new u
 <h3>Digital Signature</h3>
 
 <h3>Evaluation</h3>
+
+After you done everything, it's time for you to know some concepts and study.
+
+I also have a guide for the <a href="https://github.com/rafaelcoias/42_Born2beRoot/tree/main/EVALUATION">evaluation</a> and you can use it to prepare!
 
