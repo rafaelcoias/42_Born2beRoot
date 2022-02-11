@@ -9,7 +9,7 @@ You will create your first machine in VirtualBox (or UTM if you can’t use Virt
 under specific instructions. Then, at the end of this project, you will be able to set up
 your own operating system while implementing strict rules.
 
-<h3>What you need to know before starting get_next_line</h3>
+<h3>What you need to know before starting born2beroot</h3>
 
 You can see what really is important for you to know in the <a href="https://github.com/rafaelcoias/42_Born2beRoot/tree/main/EVALUATION">EVALUATION</a> directory (in case you are doing Born2beRoot).
 
