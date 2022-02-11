@@ -2,6 +2,7 @@
 <h3>Summary</h3>
 
   - Introduction
+  - Create VM
   - VM Installation
   - Full Command Guide
     * Basic Set Up
@@ -18,13 +19,21 @@
 There are a lot of new commands that you are going to use. I recommend you to take notes about what a command does. <br>
 If you use this guide from the beginning to end, you have born2beroot done.
 
-<h3>VM Installation</h3>
+<h3>Create VM</h3>
 
 Choose one (I recommend Debian as this guide is about Debian).
 
 Get Debian <a href="https://www.debian.org/download">here</a> <br>
 Get CentOS <a href="https://www.centos.org/download/">here</a>
 <hr>
+After downloading Debian it is time to create your VM.
+
+![image](https://user-images.githubusercontent.com/91686183/153648968-b38b94d2-80b8-4c40-bce1-fad6efd0f866.png)
+> ⬆ Click in New
+
+If you want to continue creating your VM click <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/CreateVM.md">here</a>.
+
+<h3>VM Installation</h3>
 
 After creating your Virtual Machine with Debian, run it and click in <i>Install</i>
 
@@ -35,9 +44,22 @@ If you want to continue the installation click <a href="https://github.com/rafae
 <h3>Full Command Guide</h3>
 
 This Guide shows every single command and its use.
-After you write your encryption password and login with your created user, it is time to set up the basics.
+After you start the VM, write your encryption password and login with your new user, it is time to set up the basics.
+<hr>
 
 <h4>Basic Set Up</h4>
+
+<h4>UFW and SSH Configuration</h4>
+
+<h4>Password Policy Configuration</h4>
+
+<h4>Sudo Configuration</h4>
+
+<h4>Script</h4>
+
+<h4>Crontab Commands</h4>
+
+<hr>
 
 <h3>Digital Signature</h3>
 
