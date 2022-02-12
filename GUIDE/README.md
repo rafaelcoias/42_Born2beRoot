@@ -9,19 +9,7 @@
     * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#ufw-and-ssh-configuration">UFW and SSH Configuration</a>
     * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#password-policy-configuration">Password Policy Configuration</a>
     * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#sudo-configuration">Sudo Configuration</a>
-    * <details><summary><a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#script">Script</a></summary>
-      Architecture <br>
-      Physical CPU <br>
-      Virtual CPU <br>
-      Usage RAM Percentage <br>
-      Usage Disk Percentage <br>
-      Usage CPU Percentage <br>
-      Last Reboot <br>
-      LVM is active <br>
-      Number of Connections <br>
-      Number of Users <br>
-      IPv4 & MAC Address <br>
-      Number of Sudo Commands
+    * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#script">Script</a>
     * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#crontab-commands">Crontab Commands</a>
   - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#digital-signature">Digital Signature</a>
   - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#evaluation">Evaluation</a>
