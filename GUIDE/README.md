@@ -48,6 +48,7 @@ This Guide shows every single command and its use.
 After you start the VM, write your encryption password and login with your new user, it is time to set up the basics.
 
 NOTE: <br>
+The '$' char marks the beginning of a command. <br>
 Everything in <b>bolt</b> is a command. <br>
 Everything in <i>italic</i> means it does not belong to the command, it's most likely a name or a user-name. <br>
 Everything after ':' is the explanation of the written command. <br>
@@ -145,7 +146,7 @@ Now I am going to explain every single command that I used in my script. </summa
 
 <h5>Architecture</h5>
 
-$<b>uname -a</b> : Print certain system information (-a flag stands for 'all'). So this command prints all the info about the system.br>
+  - $<b>uname -a</b> : Print certain system information (-a flag stands for 'all'). So this command prints all the info about the system.
 
 <h5>Physical CPU</h5>
   
@@ -186,11 +187,81 @@ Full command
   - $<b>free -m | grep Mem | awk '{printf("%.2f"), $3/$2*100}'</b>
   
 <h5>Usage Disk Percentage</h5>
+  
+**Free Disk**  
+
+$<b>df -Bm</b> : Displays all the server and disk space information (-B flag shows the block size and -m flag makes the output in MegaBits like we want).<br> 
+$<b>grep '^/dev/'</b> : Selects every line that begins with /dev/.<br> 
+$<b>grep -v '/boot$'</b> : Discards (thats what the -v flag does) every line that ends (thats what the '$' char does) with /boot.<br> 
+The END command determines the main and last command.
+
+We are going to need a variable because we have to sum every line that has free disk info (awk command is very usefull here).<br>
+Full command
+  - $<b>df -Bm | grep '^/dev/' | grep -v '/boot$' | awk '{free_disk += $4} END {print free_disk}'</b>
+  
+**Total RAM**
+  
+Is basically the same but instead of $4 its $2 ($2 is the second column). And the -Bg flag makes the output in GB (as we want).<br>
+Full command
+  - $<b>df -Bg | grep '^/dev/' | grep -v '/boot$' | awk '{total_disk += $2} END {print total_disk}'</b>  
+
+**Usage Disk Percentage**
+  
+We need to get the usage that is in the column $3 and we will have to divide $3/$2 and multiply by 100 (to get the percentage). <br>
+Full command
+  - $<b>df -Bm | grep '^/dev/' | grep -v '/boot$' | awk '{free_disk += $3} {total_disk += $2} END {printf("%.2f"), free_disk/total_disk*100.0}'</b>  
+  
 <h5>Usage CPU Percentage</h5>
+  
+$<b>top -b</b> : Gives us yhe Cpu% as we want. The -b flag is to start in batch mode.<br> 
+$<b>top -n1</b> :  Gives us yhe Cpu% as we want. The -n1 flag specifys the max number of iterations or frames (one in this case).<br> 
+$<b>grep '^%Cpu'</b> : Selects the one row that matters (%Cpu).<br>
+$<b> awk '{printf("%.1"), $2}'</b> : The values we want are in the column $2 so we display that in percentage with 1 decimal number.<br>
+  
+Full command
+  - $<b>top -bn1 | grep '^%Cpu' | awk '{printf("%.1f%%"), $2}'</b>  
+  
 <h5>Last Reboot</h5>
+  
+$<b>who -b</b> : Displays information about users who are currently loggend in. The -b flag shows the time of last system boot.<br> 
+
+We need to get the date and time and they are in the columns $3 and $4. I am adding a space (" ") to print both columns separately.<br>
+Full command
+  - $<b>who -b | awk '{print $3" "$4}'</b>    
+  
 <h5>LVM is active</h5>
-<h5>Number of Users Connected</h5>
+  
+$<b>lsblk</b> : Shows the partitions.<br> 
+$<b>grep 'lvm'</b> : Selects only lvm part.<br>
+$<b>exit</b> : Stop and end the command.<br>
+  
+To check we do an if : if I the column $1 is different from NULL print an yes and exit, otherwise print a no.<br>
+Full command
+  - $<b>lsblk | grep 'lvm' | awk '{if ($1) {printf "Yes";exit} else {print "No"; exit}}'</b>    
+  
+<h5>Number of Connections</h5>
+  
+$<b>ss -t</b> : Displays network socket related information. The -t flag lists only the tcp connections.<br> 
+$<b>grep ESTAB</b> : Selects only the active ones.<br>
+$<b>wc -l</b> : Counts it.<br>
+  
+Full command
+  - $<b>ss -t | grep ESTAB | wc -l</b>      
+  
+<h5>Number of Users</h5>
+  
+$<b>who</b> : Displays information about users who are currently loggend in.<br> 
+$<b>cut -d " " -f 1</b> : Cuts until the first space (cut -d " "). The -d flag use delimiter instead of TAB for field delimite. The flag -f to select only these fields and add 1<br>
+$<b>sort -u</b> : Outputs only the first of an equal run (so it doesn't repeat).<br>
+$<b>wc -l</b> : Counts it.<br>
+  
+Full command
+  - $<b>who | cut -d " " -f 1 | sort -u | wc -l</b>        
+  
 <h5>IPv4 & MAC Address</h5>
+  
+  
+  
 <h5>Numbers of Sudo Commands</h5>
 
 </details>
