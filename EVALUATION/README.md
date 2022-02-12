@@ -96,31 +96,47 @@ User Information
   - $<b>getent group user42</b> : Check users from groups “user42”
   - $<b>getent group sudo</b> : Check users from groups “sudo”
   
-Groups Information
+Creating user and adding to the specified group
   
-  - $<b>groups *rade-sar*</b> : Check groups of user *rade-sar*
-  - $<b>getent group user42</b> : Check users from groups “user42”
-  - $<b>getent group sudo</b> : Check users from groups “sudo”
+  - $<b>sudo adduser *username*</b> : Create new user called *username*
+  - $<b>sudo vim /etc/login.defs</b> : Show Password Expiration Policy
+  - $<b>sudo vim /etc/pam.d/common-password</b> : Show Password Policy
+  - $<b>sudo addgroup evaluating</b> : Create new group called *evaluating*
+  - $<b>sudo usermod -aG evaluating *username*</b> : Add user *username* to evaluating group
 
 <h4>Hostname and Partitions</h4>
 
+  - $<b>hostnamectl</b> : Check hostname
+  - $<b>sudo hostnamectl set-hostname *newHostname*</b> : Change hostname
+  - $<b>lsblk</b> : View Partitions
+  
+<h4>What is LVM</h4>
 
+  - LVM allows for very flexible disk space management
+  - It provides features like the ability to add disk space to a logical volume and its filesystem
 
 <h4>Sudo</h4>
 
-
+  - $<b>sudo adduser *username* sudo</b> : Add a new user to sudo group
+  - $<b>cat /etc/sudoers.d/sudoconfig</b> : Check Sudo rules
+  - $<b>lsblk</b> : View Partitions
 
 <h4>UFW</h4>
 
-
+  - $<b>sudo ufw status</b> : Check UFW status
+  - $<b>sudo service ufw status</b> : List UFW rules
+  - $<b>sudo ufw allow 8080</b> : Create rule for port 8080
+  - $<b>sudo ufw delete allow 8080</b> : Delete rule for port 8080
 
 <h4>SSH</h4>
 
-
+  - $<b>sudo service ssh status</b> : Check that SSH Service is installed
+  - $<b>sudo vim /etc/ssh/sshd_config</b> : Check SSH Settings && Port 4242
+  - $<b>ssh *username*@127.0.0.1 -p 4242</b> : Login with a new user with SSH
 
 <h4>Script</h4>
 
-
+If you done this project, you know the commands and how to explain them. If you don't remmeber a command, click <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#script">here</a>.
 
 <h4>Crontab</h4>
 
