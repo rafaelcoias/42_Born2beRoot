@@ -144,11 +144,11 @@ $<b>sudo vim /usr/local/bin/monitoring.sh</b><br>
 <details><summary>
 Now I am going to explain every single command that I used in my script. </summary>
 
-<h5>Architecture</h5>
+<h4>Architecture</h4>
 
   - $<b>uname -a</b> : Print certain system information (-a flag stands for 'all'). So this command prints all the info about the system.
 
-<h5>Physical CPU</h5>
+<h4>Physical CPU</h4>
   
 $<b>grep "physical id" /proc/cpuinfo</b> : Select everything (inside the /cpuinfo/ directory) that has "physical id" in its name.<br> 
 $<b>sort</b> : Organizes the information.<br>
@@ -158,13 +158,13 @@ $<b>wc -l</b> : wc stands for 'word counting' and the flag -l for 'every line' (
 Full command
   - $<b>grep "physical id" /proc/cpuinfo | sort | uniq | wc -l</b> : Counts every name that has 'physical id' inside the /proc/cpuinfo directory, then sorts and displays it in an uniq line.
   
-<h5>Virtual CPU</h5>
+<h4>Virtual CPU</h4>
   
 $<b>grep "^processor" /proc/cpuinfo | sort | uniq | wc -l</b> : Counts every name that BEGINS (thats what '^' does) with 'processor' inside the /proc/cpuinfo directory, then sorts and displays it in an uniq line.<br> 
   
-<h5>Usage RAM Percentage</h5>
+<h4>Usage RAM Percentage</h4>
 
-**Free RAM**
+  1. **Free RAM**
   
 $<b>free -m</b> : Displays all the free memory information (-m flag makes the output in MegaBits like we want).<br> 
 $<b>grep Mem</b> : Selects the Mem row.<br> 
@@ -174,21 +174,21 @@ Learn about <a href="https://linux.die.net/man/1/awk">awk</a>.
 Full command
   - $<b>free -m | grep Mem | awk '{print $4}'</b>
   
-**Total RAM**
+  2. **Total RAM**
   
 Is basically the same but instead of $4 its $2 ($2 is the second column). <br>
 Full command
   - $<b>free -m | grep Mem | awk '{print $2}'</b>
   
-**Usage RAM Percentage**
+  3. **Usage RAM Percentage**
   
 We have to get the usage that is in the column $3 and we will have to divide $3/$2 and multiply by 100 (to get the percentage). <br>
 Full command
   - $<b>free -m | grep Mem | awk '{printf("%.2f"), $3/$2*100}'</b>
   
-<h5>Usage Disk Percentage</h5>
-  
-**Free Disk**  
+<h4>Usage Disk Percentage</h4>
+   
+  1. **Free Disk**  
 
 $<b>df -Bm</b> : Displays all the server and disk space information (-B flag shows the block size and -m flag makes the output in MegaBits like we want).<br> 
 $<b>grep '^/dev/'</b> : Selects every line that begins with /dev/.<br> 
@@ -199,19 +199,19 @@ We are going to need a variable because we have to sum every line that has free 
 Full command
   - $<b>df -Bm | grep '^/dev/' | grep -v '/boot$' | awk '{free_disk += $4} END {print free_disk}'</b>
   
-**Total RAM**
+  2. **Total Disk**
   
 Is basically the same but instead of $4 its $2 ($2 is the second column). And the -Bg flag makes the output in GB (as we want).<br>
 Full command
   - $<b>df -Bg | grep '^/dev/' | grep -v '/boot$' | awk '{total_disk += $2} END {print total_disk}'</b>  
 
-**Usage Disk Percentage**
+  3. **Usage Disk Percentage**
   
 We need to get the usage that is in the column $3 and we will have to divide $3/$2 and multiply by 100 (to get the percentage). <br>
 Full command
   - $<b>df -Bm | grep '^/dev/' | grep -v '/boot$' | awk '{free_disk += $3} {total_disk += $2} END {printf("%.2f"), free_disk/total_disk*100.0}'</b>  
   
-<h5>Usage CPU Percentage</h5>
+<h4>Usage CPU Percentage</h4>
   
 $<b>top -b</b> : Gives us yhe Cpu% as we want. The -b flag is to start in batch mode.<br> 
 $<b>top -n1</b> :  Gives us yhe Cpu% as we want. The -n1 flag specifys the max number of iterations or frames (one in this case).<br> 
@@ -221,7 +221,7 @@ $<b> awk '{printf("%.1"), $2}'</b> : The values we want are in the column $2 so 
 Full command
   - $<b>top -bn1 | grep '^%Cpu' | awk '{printf("%.1f%%"), $2}'</b>  
   
-<h5>Last Reboot</h5>
+<h4>Last Reboot</h4>
   
 $<b>who -b</b> : Displays information about users who are currently loggend in. The -b flag shows the time of last system boot.<br> 
 
@@ -229,7 +229,7 @@ We need to get the date and time and they are in the columns $3 and $4. I am add
 Full command
   - $<b>who -b | awk '{print $3" "$4}'</b>    
   
-<h5>LVM is active</h5>
+<h4>LVM is active</h4>
   
 $<b>lsblk</b> : Shows the partitions.<br> 
 $<b>grep 'lvm'</b> : Selects only lvm part.<br>
@@ -239,7 +239,7 @@ To check we do an if : if I the column $1 is different from NULL print an yes an
 Full command
   - $<b>lsblk | grep 'lvm' | awk '{if ($1) {printf "Yes";exit} else {print "No"; exit}}'</b>    
   
-<h5>Number of Connections</h5>
+<h4>Number of Connections</h4>
   
 $<b>ss -t</b> : Displays network socket related information. The -t flag lists only the tcp connections.<br> 
 $<b>grep ESTAB</b> : Selects only the active ones.<br>
@@ -248,7 +248,7 @@ $<b>wc -l</b> : Counts it.<br>
 Full command
   - $<b>ss -t | grep ESTAB | wc -l</b>      
   
-<h5>Number of Users</h5>
+<h4>Number of Users</h4>
   
 $<b>who</b> : Displays information about users who are currently loggend in.<br> 
 $<b>cut -d " " -f 1</b> : Cuts until the first space (cut -d " "). The -d flag use delimiter instead of TAB for field delimite. The flag -f to select only these fields and add 1<br>
@@ -258,13 +258,13 @@ $<b>wc -l</b> : Counts it.<br>
 Full command
   - $<b>who | cut -d " " -f 1 | sort -u | wc -l</b>        
   
-<h5>IPv4 & MAC Address</h5>
+<h4>IPv4 & MAC Address</h4>
   
-**IP Address**
+  1. **IP Address**
   
   - $<b>hostname -I</b> : Displays the system's DNS name. The -I flag displays all network addresses of the host.<br>
   
-**MAC Address**  
+  2. **MAC Address**  
   
 $<b>ip link show</b> : Displays MAC (Media Access Control) and the network device.<br>
 $<b>grep ether</b> : Selects only the parts that have 'ether'.<br>
@@ -273,7 +273,7 @@ We just need the second column $2.<br>
 Full command
   - $<b>ip link show | grep ether | awk '{print $2}'</b>     
   
-<h5>Numbers of Sudo Commands</h5>
+<h4>Numbers of Sudo Commands</h4>
 
 $<b>journalctl</b> : Displays the record of journal and history logs.<br>
 $<b>grep COMMAND</b> : Selects only logs that are Commands.<br>  
