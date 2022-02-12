@@ -172,6 +172,17 @@ Learn more : <a href="https://linux.die.net/man/5/crontab">man crontab</a>.
 
 <h3>Digital Signature</h3>
 
+If you did everthing and want to submit your project, first thing you need to do is your digital signature. <br>
+
+1. Open in your terminal the directory where your virtual machine is located (normally is in /sgoinfre/ or /goinfre/).
+2. Run a command that creates your VM signature.
+  - $<b>shasum <i>yourFilesName.dvi</i></b>
+
+3. Copy the created key to a file with the name 'signature.txt' and submit it.
+
+You can do all of this using just the following command :
+  -  $<b>shasum <i>yourFilesName.dvi</i> > signature.txt && mv signature.txt <i>yourRepositoryPath</i></b>
+
 <h3>Evaluation</h3>
 
 After you done everything, it's time for you to know some concepts and study.
