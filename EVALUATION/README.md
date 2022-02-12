@@ -90,11 +90,17 @@ $<b>sudo aa-status</b>
 
 <h4>User and Groups</h4>
 
+User Information  
+  
   - $<b>groups *rade-sar*</b> : Check groups of user *rade-sar*
   - $<b>getent group user42</b> : Check users from groups “user42”
   - $<b>getent group sudo</b> : Check users from groups “sudo”
   
-
+Groups Information
+  
+  - $<b>groups *rade-sar*</b> : Check groups of user *rade-sar*
+  - $<b>getent group user42</b> : Check users from groups “user42”
+  - $<b>getent group sudo</b> : Check users from groups “sudo”
 
 <h4>Hostname and Partitions</h4>
 
