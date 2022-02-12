@@ -140,11 +140,61 @@ $<b>sudo visudo</b> :  Open and edit sudoers file<br>
 $<b>sudo vim /usr/local/bin/monitoring.sh</b><br>
   - Create a script that displays the info asked in born2beroot_subject.
   - Every bash script starts with '#!/bin/bash'.
+<details><summary>
+Now I am going to explain every single command that I used in my script. </summary>
 
-Now I am going to explain every single command that I used in my script.
+<h5>Architecture</h5>
 
--COMMANDS
+$<b>uname -a</b> : Print certain system information (-a flag stands for 'all'). So this command prints all the info about the system.br>
 
+<h5>Physical CPU</h5>
+  
+$<b>grep "physical id" /proc/cpuinfo</b> : Select everything (inside the /cpuinfo/ directory) that has "physical id" in its name.<br> 
+$<b>sort</b> : Organizes the information.<br>
+$<b>uniq</b> : Displays the information in an uniq line.<br>
+$<b>wc -l</b> : wc stands for 'word counting' and the flag -l for 'every line' (so this command counts every line of its search).<br>
+  
+Full command
+  - $<b>grep "physical id" /proc/cpuinfo | sort | uniq | wc -l</b> : Counts every name that has 'physical id' inside the /proc/cpuinfo directory, then sorts and displays it in an uniq line.
+  
+<h5>Virtual CPU</h5>
+  
+$<b>grep "^processor" /proc/cpuinfo | sort | uniq | wc -l</b> : Counts every name that BEGINS (thats what '^' does) with 'processor' inside the /proc/cpuinfo directory, then sorts and displays it in an uniq line.<br> 
+  
+<h5>Usage RAM Percentage</h5>
+
+**Free RAM**
+  
+$<b>free -m</b> : Displays all the free memory information (-m flag makes the output in MegaBits like we want).<br> 
+$<b>grep Mem</b> : Selects the Mem row.<br> 
+$<b>print $4</b> : Prints the 4th column (4th column is the column of the available memory).<br>
+Learn about <a href="https://linux.die.net/man/1/awk">awk</a>. 
+  
+Full command
+  - $<b>free -m | grep Mem | awk '{print $4}'</b>
+  
+**Total RAM**
+  
+Is basically the same but instead of $4 its $2 ($2 is the second column). <br>
+Full command
+  - $<b>free -m | grep Mem | awk '{print $2}'</b>
+  
+**Usage RAM Percentage**
+  
+We have to get the usage that is in the column $3 and we will have to divide $3/$2 and multiply by 100 (to get the percentage). <br>
+Full command
+  - $<b>free -m | grep Mem | awk '{printf("%.2f"), $3/$2*100}'</b>
+  
+<h5>Usage Disk Percentage</h5>
+<h5>Usage CPU Percentage</h5>
+<h5>Last Reboot</h5>
+<h5>LVM is active</h5>
+<h5>Number of Users Connected</h5>
+<h5>IPv4 & MAC Address</h5>
+<h5>Numbers of Sudo Commands</h5>
+
+</details>
+  
 You can see my final script <a href="https://github.com/rafaelcoias/42_Born2beRoot/tree/main/born2beroot_script">here</a>. 
 
 Now lets add a rule for the script execute with sudo permissions without the sudo password. 
