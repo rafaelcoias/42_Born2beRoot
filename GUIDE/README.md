@@ -11,6 +11,17 @@
     * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#sudo-configuration">Sudo Configuration</a>
     * <details><summary><a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#script">Script</a></summary>
       Architecture
+      Physical CPU
+      Virtual CPU
+      Usage RAM Percentage
+      Usage Disk Percentage
+      Usage CPU Percentage
+      Last Reboot
+      LVM is active
+      Number of Connections
+      Number of Users
+      IPv4 & MAC Address
+      Number of Sudo Commands
     * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#crontab-commands">Crontab Commands</a>
   - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#digital-signature">Digital Signature</a>
   - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#evaluation">Evaluation</a>
@@ -274,7 +285,7 @@ We just need the second column $2.<br>
 Full command
   - $<b>ip link show | grep ether | awk '{print $2}'</b>     
   
-<h4>Numbers of Sudo Commands</h4>
+<h4>Number of Sudo Commands</h4>
 
 $<b>journalctl</b> : Displays the record of journal and history logs.<br>
 $<b>grep COMMAND</b> : Selects only logs that are Commands.<br>  
