@@ -18,7 +18,7 @@
     * SSH
     * Script
     * Crontab
-  - Important Commands
+  - Good Luck !
 
 <h3>Introduction</h3>
 
@@ -140,10 +140,9 @@ If you done this project, you know the commands and how to explain them. If you 
 
 <h4>Crontab</h4>
 
+  - $<b>sudo crontab -e</b> : Access Crontab settings
 
 </details>
 
-<h3>Important Commands</h3>
-
-
+<h3>I wish you the best luck !</h3>
 
