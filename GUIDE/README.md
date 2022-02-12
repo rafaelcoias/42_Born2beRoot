@@ -1,18 +1,18 @@
 <h1>Born2beRoot Guide</h1>
 <h3>Summary</h3>
 
-  - Introduction
-  - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#create-vm">here</a>
-  - VM Installation
-  - Full Command Guide
+  - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#introduction">Introduction</a>
+  - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#create-vm">Create VM</a>
+  - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#vm-installation">VM Installation</a>
+  - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#full-command-guide">Full Command Guide</a>
     * Basic Set Up
     * UFW and SSH Configuration
     * Password Policy Configuration
     * Sudo Configuration
     * Script
     * Crontab Commands
-  - Digital Signature
-  - Evaluation
+  - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#digital-signature">Digital Signature</a>
+  - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#evaluation">Evaluation</a>
 
 <h3>Introduction</h3>
 
