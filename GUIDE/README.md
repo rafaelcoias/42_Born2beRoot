@@ -5,12 +5,13 @@
   - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#create-vm">Create VM</a>
   - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#vm-installation">VM Installation</a>
   - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#full-command-guide">Full Command Guide</a>
-    * Basic Set Up
-    * UFW and SSH Configuration
-    * Password Policy Configuration
-    * Sudo Configuration
-    * Script
-    * Crontab Commands
+    * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#basic-set-up">Basic Set Up</a>
+    * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#ufw-and-ssh-configuration">UFW and SSH Configuration</a>
+    * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#password-policy-configuration">Password Policy Configuration</a>
+    * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#sudo-configuration">Sudo Configuration</a>
+    * <details><summary><a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#script">Script</a></summary>
+      Architecture
+    * <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#crontab-commands">Crontab Commands</a>
   - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#digital-signature">Digital Signature</a>
   - <a href="https://github.com/rafaelcoias/42_Born2beRoot/blob/main/GUIDE/README.md#evaluation">Evaluation</a>
 
