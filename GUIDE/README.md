@@ -10,7 +10,6 @@
     * Password Policy Configuration
     * Sudo Configuration
     * Script
-      - Architecture
     * Crontab Commands
   - Digital Signature
   - Evaluation
