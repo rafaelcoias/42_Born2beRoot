@@ -141,6 +141,7 @@ $<b>sudo visudo</b> :  Open and edit sudoers file<br>
 $<b>sudo vim /usr/local/bin/monitoring.sh</b><br>
   - Create a script that displays the info asked in born2beroot_subject.
   - Every bash script starts with '#!/bin/bash'.
+  - Do a wall " ... " (just what you put inside the wall is going to be shown when we run the script).
 <details><summary>
 Now I am going to explain every single command that I used in my script. </summary>
 
@@ -260,12 +261,54 @@ Full command
   
 <h5>IPv4 & MAC Address</h5>
   
+**IP Address**
   
+  - $<b>hostname -I</b> : Displays the system's DNS name. The -I flag displays all network addresses of the host.<br>
+  
+**MAC Address**  
+  
+$<b>ip link show</b> : Displays MAC (Media Access Control) and the network device.<br>
+$<b>grep ether</b> : Selects only the parts that have 'ether'.<br>
+  
+We just need the second column $2.<br>
+Full command
+  - $<b>ip link show | grep ether | awk '{print $2}'</b>     
   
 <h5>Numbers of Sudo Commands</h5>
 
-</details>
+$<b>journalctl</b> : Displays the record of journal and history logs.<br>
+$<b>grep COMMAND</b> : Selects only logs that are Commands.<br>  
+$<b>wc -l</b> : Counts it.<br>  
   
+Full command
+  - $<b>journalctl | grep COMMAND | wc -l</b>       
+  
+</details>
+
+<hr>
+
+*Commands Summary*
+1. grep : Selects/searchs for a group of strings/parts/names.
+2. grep '^example' : Selects/searchs for a group of strings/parts/names that begins with 'example'.
+3. grep 'example$' : Selects/searchs for a group of strings/parts/names that ends with 'example'.
+4. sort : Organizes and sorts the information collected.
+5. uniq : Displays in an uniq line.
+6. wc -l : Counts each line which a word appears in.
+7. free : Displays current free memory information.
+8. df : Displays current amount of free disk.
+9. top : Displays every Cpu information.
+10. who : Displays information about users who are currently loggend in.
+11. lsblk : Displays partitions
+12. ss : Displays network information.
+13. ss -t : Displays network info (just tcp connections)
+14. cut -d " " : Cuts information until it founds a space.
+15. hostname -I : Displays all network information about the addresses of the host.
+16. ip : Shows routing (mac address).
+17. ip link show : Shows network device. 
+18. journalctl : Displays the record journal and history that are archived in logs.
+
+<hr>
+
 You can see my final script <a href="https://github.com/rafaelcoias/42_Born2beRoot/tree/main/born2beroot_script">here</a>. 
 
 Now lets add a rule for the script execute with sudo permissions without the sudo password. 
