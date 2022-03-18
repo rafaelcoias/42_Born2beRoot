@@ -292,7 +292,7 @@ Full command
 2. grep '^example' : Selects/searchs for a group of strings/parts/names that begins with 'example'.
 3. grep 'example$' : Selects/searchs for a group of strings/parts/names that ends with 'example'.
 4. sort : Organizes and sorts the information collected.
-5. uniq : Displays in an uniq line.
+5. uniq : Displays without repeating words/counting.
 6. wc -l : Counts each line which a word appears in.
 7. free : Displays current free memory information.
 8. df : Displays current amount of free disk.
