@@ -43,6 +43,12 @@ By default, UFW is set to deny all incoming connections and allow all outgoing c
 
 Learn more here : <a href="https://www.linux.com/training-tutorials/introduction-uncomplicated-firewall-ufw/">what is ufw</a>
 
+<details><summary>My grade</summary>
+  
+  ![image](https://user-images.githubusercontent.com/91686183/169927289-9e8dcfa1-7789-4b1d-a6fb-b9d1b8f90dce.png)
+  
+</details>
+
 <hr>
 I hope you found it interesting! <br>
 If you are going to do born2beroot, check my <a href="https://github.com/rafaelcoias/42_Born2beRoot/tree/main/GUIDE">GUIDE</a> and I really wish you good luck and hope that you learned something here!
