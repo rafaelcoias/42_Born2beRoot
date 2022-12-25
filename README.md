@@ -8,7 +8,8 @@ This project aims to introduce you to the wonderful world of virtualization.
 
   - Network & system administration
   - Rigor
-
+  - Manage Virtual Machines
+  
 <h3>Goal</h3>
 
 You will create your first machine in VirtualBox (or UTM if you can’t use VirtualBox)
